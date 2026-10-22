@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EU Global Çevre | Sürdürülebilir Çevre Çözümleri</title>
+    <title>EU Global Çevre | Entegre Çevre & Atık Yönetimi Çözümleri</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -51,7 +51,7 @@
         }
 
         section {
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
             scroll-snap-align: start;
             scroll-snap-stop: always;
@@ -59,7 +59,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 10%;
+            padding: 90px 8% 40px;
             overflow: hidden;
         }
 
@@ -69,13 +69,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 25px 8%;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            background: linear-gradient(to bottom, rgba(9, 19, 19, 0.8), transparent);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(to bottom, rgba(9, 19, 19, 0.95), rgba(9, 19, 19, 0.6));
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
 
         .logo {
@@ -96,8 +97,9 @@
 
         nav ul {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             list-style: none;
+            align-items: center;
         }
 
         nav a {
@@ -106,9 +108,65 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 0;
         }
 
         nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            width: 280px;
+            background: rgba(15, 23, 23, 0.95);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 12px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li a {
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dropdown-menu li a:hover {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+        }
+
+        .dropdown-menu li a i {
+            width: 20px;
             color: var(--primary);
         }
 
@@ -149,30 +207,19 @@
             z-index: 1;
             background-size: cover;
             background-position: center;
-            filter: brightness(0.35);
+            filter: brightness(0.25);
         }
 
-        .hero-bg {
-            background-image: url('https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg?auto=compress&cs=tinysrgb&w=1920');
-        }
-
-        .about-bg {
-            background-image: url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&w=1920');
-        }
-
-        .services-bg {
-            background-image: url('https://images.pexels.com/photos/1549528/pexels-photo-1549528.jpeg?auto=compress&cs=tinysrgb&w=1920');
-        }
-
-        .contact-bg {
-            background-image: url('https://images.pexels.com/photos/3735218/pexels-photo-3735218.jpeg?auto=compress&cs=tinysrgb&w=1920');
-        }
+        .hero-bg { background-image: url('https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg?auto=compress&cs=tinysrgb&w=1920'); }
+        .about-bg { background-image: url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&w=1920'); }
+        .services-bg { background-image: url('https://images.pexels.com/photos/1549528/pexels-photo-1549528.jpeg?auto=compress&cs=tinysrgb&w=1920'); }
+        .contact-bg { background-image: url('https://images.pexels.com/photos/3735218/pexels-photo-3735218.jpeg?auto=compress&cs=tinysrgb&w=1920'); }
 
         /* Section Contents */
         .content {
             position: relative;
             z-index: 2;
-            max-width: 1200px;
+            max-width: 1250px;
             width: 100%;
         }
 
@@ -199,7 +246,7 @@
         }
 
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 25px;
@@ -210,9 +257,9 @@
         }
 
         .hero-content p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             line-height: 1.6;
         }
 
@@ -261,7 +308,8 @@
 
         /* Section Titles */
         .section-header {
-            margin-bottom: 50px;
+            margin-bottom: 35px;
+            text-align: center;
         }
 
         .subtitle {
@@ -271,11 +319,11 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
@@ -284,30 +332,31 @@
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
 
         .about-box {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 40px;
+            padding: 35px;
             border-radius: 24px;
             backdrop-filter: blur(12px);
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .stat-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border);
-            padding: 20px;
+            padding: 20px 15px;
             border-radius: 16px;
+            text-align: center;
         }
 
         .stat-card h3 {
@@ -318,55 +367,74 @@
 
         .stat-card p {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin-top: 5px;
+            font-weight: 600;
         }
 
-        /* Cards Grid */
-        .cards-grid {
+        /* Services Grid (8 Hizmet Kartı) */
+        .services-grid-8 {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
-        .card {
+        .service-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 35px;
+            padding: 25px 20px;
             border-radius: 20px;
             backdrop-filter: blur(12px);
-            transition: all 0.4s ease;
+            transition: all 0.35 ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
+        .service-card:hover {
+            transform: translateY(-6px);
             border-color: rgba(16, 185, 129, 0.4);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(16, 185, 129, 0.1);
+        .card-num {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.04);
+            pointer-events: none;
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(16, 185, 129, 0.12);
             color: var(--primary);
-            border-radius: 16px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-        }
-
-        .card h3 {
             font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 700;
+            margin-bottom: 18px;
         }
 
-        .card p {
+        .service-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .service-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
         /* Contact Section */
@@ -384,12 +452,12 @@
         /* Scroll Down Indicator */
         .scroll-down {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             animation: bounce 2s infinite;
             text-decoration: none;
         }
@@ -401,18 +469,25 @@
         }
 
         /* Responsive */
-        @media (max-width: 992px) {
-            section { padding: 0 5%; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .grid-2, .cards-grid { grid-template-columns: 1fr; gap: 20px; }
+        @media (max-width: 1100px) {
+            .services-grid-8 { grid-template-columns: repeat(2, 1fr); }
+            .hero-content h1 { font-size: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 80px 5% 30px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 20px; }
+            .services-grid-8 { grid-template-columns: 1fr; }
             nav { display: none; }
             .side-dots { display: none; }
+            .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Fixed Header Navigation -->
+    <!-- Fixed Header Navigation with Dropdown Menu -->
     <header>
         <a href="#hero" class="logo">
             <i class="fa-solid fa-recycle"></i> EU Global Çevre
@@ -421,7 +496,24 @@
             <ul>
                 <li><a href="#hero" class="active">Anasayfa</a></li>
                 <li><a href="#about">Hakkımızda</a></li>
-                <li><a href="#services">Hizmetlerimiz</a></li>
+                
+                <!-- Hizmetlerimiz Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="#services">
+                        Hizmetlerimiz <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#services"><i class="fa-solid fa-clipboard-check"></i> Çevre Danışmanlığı</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-truck-droplet"></i> Atık Taşıma Hizmeti</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-recycle"></i> Atık Yönetimi</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-flask"></i> Kimyevi Maddeler</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-pump-soap"></i> Temizlik Ürünleri</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-diagram-project"></i> Entegre Atık Yönetimi</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-smog"></i> Karbon Ayak İzi</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-user-shield"></i> İş Güvenliği Hizmeti</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#contact">İletişim</a></li>
             </ul>
         </nav>
@@ -443,12 +535,12 @@
             <div class="bg-overlay hero-bg"></div>
             <div class="content hero-content">
                 <div class="badge">
-                    <i class="fa-solid fa-leaf"></i> Sürdürülebilir Gelecek Teknolojileri
+                    <i class="fa-solid fa-leaf"></i> Sürdürülebilir Çevre & Sanayi Çözümleri
                 </div>
                 <h1>Atıkları Kaynağa, Geleceği Yeşil Bir Dünyaya Dönüştürüyoruz</h1>
-                <p>EU Global Çevre olarak endüstriyel ve evsel atık yönetiminde yenilikçi, doğaya saygılı ve döngüsel ekonomiyi destekleyen entegre çözümler sunuyoruz.</p>
+                <p>Çevre danışmanlığı, entegre atık yönetimi, atık taşıma, kimyevi hammadde ikmali ve iş güvenliği süreçlerinde uçtan uca profesyonel hizmet sunuyoruz.</p>
                 <div class="btn-group">
-                    <a href="#services" class="btn btn-primary">Çözümlerimiz <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#services" class="btn btn-primary">Hizmetlerimizi İnceleyin <i class="fa-solid fa-arrow-right"></i></a>
                     <a href="#contact" class="btn btn-outline">İletişim</a>
                 </div>
             </div>
@@ -461,33 +553,32 @@
             <div class="content">
                 <div class="grid-2">
                     <div>
-                        <div class="section-header">
-                            <span class="subtitle">Vizyonumuz & Misyonumuz</span>
-                            <h2 class="title">Gelecek Nesillere Daha Temiz Bir Dünya</h2>
+                        <div class="section-header" style="text-align: left;">
+                            <span class="subtitle">Kurumsal Yaklaşımımız</span>
+                            <h2 class="title">Uzman ve Güvenilir Çevre Hizmetleri</h2>
                         </div>
-                        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
-                            Çevre mevzuatlarına tam uyumlu yüksek teknolojili tesislerimizde, plastik, kağıt, ambalaj ve tehlikesiz endüstriyel atıkları ekonomiye yeniden kazandırıyoruz.
+                        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 15px;">
+                            Firmamız, çevre ve atık yönetimi alanında uzman kadrosuyla <strong>çevre danışmanlığı</strong>, <strong>bildirim ve beyan</strong>, <strong>sosyal uygunluk danışmanlığı</strong> ile mevzuata uyumu kolaylaştırır.
+                        </p>
+                        <p style="color: var(--text-muted); line-height: 1.7;">
+                            <strong>Atık yönetimi</strong>, <strong>kimyevi maddeler ikmali</strong>, <strong>endüstriyel oto temizlik ürünleri imalatı</strong> ve <strong>iş güvenliği</strong> hizmetlerimizle işletmenizin verimliliğini ve çevresel sorumluluklarını en üst seviyeye taşıyoruz.
                         </p>
                     </div>
                     <div class="about-box">
-                        <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Sayılarla EU Global Çevre</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Doğaya ve ekonomiye sağladığımız katkı rakamları.</p>
+                        <h3 style="margin-bottom: 10px; font-size: 1.3rem;">Rakamlarla Başarılarımız</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Sektördeki tecrübemiz ve dinamik müşteri ağımız.</p>
                         <div class="stats-grid">
                             <div class="stat-card">
-                                <h3>%100</h3>
-                                <p>Lisanslı & Bakanlık Onaylı</p>
+                                <h3>330+</h3>
+                                <p>Aktif Müşteri</p>
                             </div>
                             <div class="stat-card">
-                                <h3>+10K Ton</h3>
-                                <p>Yıllık Geri Dönüşüm</p>
+                                <h3>850+</h3>
+                                <p>Bitirilen Proje</p>
                             </div>
                             <div class="stat-card">
-                                <h3>Sıfır Atık</h3>
-                                <p>Danışmanlık Hedefi</p>
-                            </div>
-                            <div class="stat-card">
-                                <h3>%40</h3>
-                                <p>Karbon Ayak İzi Azaltımı</p>
+                                <h3>350+</h3>
+                                <p>Danışmanlık Hizmeti</p>
                             </div>
                         </div>
                     </div>
@@ -496,29 +587,94 @@
             <a href="#services" class="scroll-down"><i class="fa-solid fa-chevron-down"></i></a>
         </section>
 
-        <!-- Section 3: Services -->
+        <!-- Section 3: Services (Tüm Alt Başlıklar) -->
         <section id="services">
             <div class="bg-overlay services-bg"></div>
             <div class="content">
-                <div class="section-header" style="text-align: center;">
+                <div class="section-header">
                     <span class="subtitle">Faaliyet Alanlarımız</span>
-                    <h2 class="title">Entegre Atık Yönetimi Çözümleri</h2>
+                    <h2 class="title">Tüm Hizmet Konularımız</h2>
                 </div>
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon"><i class="fa-solid fa-bottle-water"></i></div>
-                        <h3>Plastik & Ambalaj Dönüşümü</h3>
-                        <p>Kullanım ömrünü tamamlamış ambalaj atıklarını yüksek standartlı ikincil hammaddelere dönüştürerek sanayiye geri kazandırıyoruz.</p>
+                
+                <div class="services-grid-8">
+                    <!-- 01. Çevre Danışmanlığı -->
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <h3>Çevre Danışmanlığı</h3>
+                            <p>Çevre mevzuatına uygunluk, bildirim/beyan süreçleri ve sürdürülebilirlik için profesyonel danışmanlık.</p>
+                        </div>
+                        <span class="card-num">01</span>
                     </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fa-solid fa-box-open"></i></div>
-                        <h3>Kağıt & Karton Yönetimi</h3>
-                        <p>Endüstriyel tesis ve kurumlardan toplanan selüloz bazlı atıkları işleyerek binlerce ağacın kesilmesini önlüyoruz.</p>
+
+                    <!-- 02. Atık Taşıma Hizmeti -->
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon"><i class="fa-solid fa-truck-moving"></i></div>
+                            <h3>Atık Taşıma Hizmeti</h3>
+                            <p>Atıkların mevzuata uygun lisanslı araçlarla güvenli bir şekilde taşınması ve tesis teslimi.</p>
+                        </div>
+                        <span class="card-num">02</span>
                     </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fa-solid fa-award"></i></div>
-                        <h3>Sıfır Atık Danışmanlığı</h3>
-                        <p>İşletmenize özel atık azaltım stratejileri, belgelendirme süreçleri ve sıfır atık yönetim sistemleri kuruyoruz.</p>
+
+                    <!-- 03. Atık Yönetimi -->
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                            <h3>Atık Yönetimi</h3>
+                            <p>Atıkların kaynağında toplanması, ayrıştırılması, geri dönüşümü ve bertarafı yönetimi.</p>
+                        </div>
+                        <span class="card-num">03</span>
+                    </div>
+
+                    <!-- 04. Kimyevi Maddeler -->
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon"><i class="fa-solid fa-flask"></i></div>
+                            <h3>Kimyevi Maddeler</h3>
+                            <p>Hammadde ve yardımcı hammadde alım satımı, motor yağları ve endüstriyel yağ bayiliği.</p>
+                        </div>
+                        <span class="card-num">04</span>
+                    </div>
+
+                    <!-- 05. Temizlik Ürünleri -->
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                            <h3>Temizlik Ürünleri</h3>
+                            <p>Oto bakım ürünleri ve yüksek kaliteli endüstriyel temizlik kimyasalları imalatı.</p>
+                        </div>
+                        <span class="card-num">05</span>
+                    </div>
+
+                    <!-- 06. Entegre Atık Yönetimi -->
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+                            <h3>Entegre Atık Yönetimi</h3>
+                            <p>Tüm atık süreçlerinin uçtan uca bütüncül planlanması, geri kazanımı ve tesislere entegrasyonu.</p>
+                        </div>
+                        <span class="card-num">06</span>
+                    </div>
+
+                    <!-- 07. Karbon Ayak İzi -->
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon"><i class="fa-solid fa-smog"></i></div>
+                            <h3>Karbon Ayak İzi</h3>
+                            <p>Kurumsal emisyonların ölçümü, raporlanması ve azaltım hedefleri için sürdürülebilirlik çözümleri.</p>
+                        </div>
+                        <span class="card-num">07</span>
+                    </div>
+
+                    <!-- 08. İş Güvenliği Hizmeti -->
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
+                            <h3>İş Güvenliği Hizmeti</h3>
+                            <p>İşletmenizin yasalara uygun, güvenli bir çalışma ortamı sunması için tüm İSG süreçlerinde yanınızdayız.</p>
+                        </div>
+                        <span class="card-num">08</span>
                     </div>
                 </div>
             </div>
@@ -533,7 +689,7 @@
                     <div class="badge"><i class="fa-solid fa-envelope"></i> Bize Ulaşın</div>
                     <h2 class="title" style="margin-bottom: 20px;">Sürdürülebilir Projenizi Birlikte Başlatalım</h2>
                     <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 35px;">
-                        Geri dönüşüm süreçleri, kurumsal teklifler veya sıfır atık danışmanlık hizmetlerimiz için ekibimizle anında iletişime geçin.
+                        Atık yönetimi, çevre danışmanlığı, iş güvenliği ve kimyevi madde tedariği konularındaki kurumsal teklif talepleriniz için anında iletişime geçin.
                     </p>
                     <div class="btn-group">
                         <a href="mailto:info@euglobalcevre.com" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> E-Posta Gönder</a>
@@ -557,7 +713,7 @@
         const container = document.getElementById('main-container');
         const sections = document.querySelectorAll('section');
         const dots = document.querySelectorAll('.dot');
-        const navLinks = document.querySelectorAll('nav a');
+        const navLinks = document.querySelectorAll('nav > ul > li > a');
 
         container.addEventListener('scroll', () => {
             let current = '';
