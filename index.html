@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sade & Modern Kurumsal | Tek Sayfa</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f7f6',
+                            100: '#e3ebe8',
+                            500: '#2d6a4f',
+                            600: '#1b4332',
+                            900: '#081c15',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-slate-900 selection:text-white">
+
+    <!-- Navbar / Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#hero" class="text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-semibold text-sm">S</span>
+                <span>SADE<span class="text-slate-400 font-normal">.studio</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-slate-900 transition-colors duration-200">Hakkımızda</a>
+                <a href="#services" class="hover:text-slate-900 transition-colors duration-200">Hizmetler</a>
+                <a href="#features" class="hover:text-slate-900 transition-colors duration-200">Özellikler</a>
+                <a href="#contact" class="hover:text-slate-900 transition-colors duration-200">İletişim</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-slate-900 rounded-full hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow">
+                    Bize Ulaşın
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Menüyü Aç">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-3 transition-all duration-300">
+            <a href="#about" class="block text-slate-600 hover:text-slate-900 font-medium text-sm py-1">Hakkımızda</a>
+            <a href="#services" class="block text-slate-600 hover:text-slate-900 font-medium text-sm py-1">Hizmetler</a>
+            <a href="#features" class="block text-slate-600 hover:text-slate-900 font-medium text-sm py-1">Özellikler</a>
+            <a href="#contact" class="block text-slate-600 hover:text-slate-900 font-medium text-sm py-1">İletişim</a>
+            <a href="#contact" class="block w-full text-center px-4 py-2 text-sm font-medium text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors mt-2">
+                Bize Ulaşın
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative pt-24 pb-20 md:pt-36 md:pb-32 px-6 overflow-hidden">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200/80">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Sade, Hızlı ve Modern Tasarım
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.15]">
+                    Karmaşıklıktan Uzak,<br class="hidden sm:inline"> Odaklanmış Çözümler.
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
+                    Dijital varlığınızı sade ve şık bir çizgiyle geleceğe taşıyoruz. İhtiyacınız olan tüm temel bilgileri ve hizmetleri tek sayfada sunun.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#contact" class="w-full sm:w-auto px-7 py-3.5 text-sm font-medium text-white bg-slate-900 rounded-full hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2 group">
+                        Projeye Başlayın
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#about" class="w-full sm:w-auto px-7 py-3.5 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-all duration-200 flex items-center justify-center">
+                        Detaylı Bilgi
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section / Temel Bilgiler -->
+        <section id="about" class="py-20 bg-white border-y border-slate-100 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Temel Bilgiler</h2>
+                    <p class="text-3xl font-bold tracking-tight text-slate-900">Biz Kimiz ve Ne Yapıyoruz?</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-6 text-slate-900">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Net Vizyon</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Kullanıcı deneyimini ön planda tutan, işlevsel ve estetik dijital çözümler üretiyoruz.
+                        </p>
+                    </div>
+
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-6 text-slate-900">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Hızlı Performans</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Aşırı yüklerden arındırılmış, yüksek hızda yüklenen optimize yapılar kuruyoruz.
+                        </p>
+                    </div>
+
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-6 text-slate-900">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Güvenilir Altyapı</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Güncel standartlara uygun, güvenli ve sürdürülebilir kod mimarisi kullanıyoruz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Hizmetlerimiz</h2>
+                    <p class="text-3xl font-bold tracking-tight text-slate-900">Sizin İçin Sunulan Çözümler</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Service Card 1 -->
+                    <div class="p-6 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-200">
+                        <i data-lucide="layout" class="w-8 h-8 text-slate-800 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Web Tasarım</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed">Mobil uyumlu, modern ve sade arayüz tasarımları.</p>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="p-6 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-200">
+                        <i data-lucide="code" class="w-8 h-8 text-slate-800 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Yazılım Geliştirme</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed">İhtiyacınıza özel, esnek ve güvenli yazılım çözümleri.</p>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="p-6 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-200">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-slate-800 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Mobil Uyum</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed">Tüm cihaz ekranlarında eksiksiz ve kusursuz görünüm.</p>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="p-6 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-200">
+                        <i data-lucide="bar-chart-3" class="w-8 h-8 text-slate-800 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">SEO Optimization</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed">Arama motorlarında üst sıralara çıkmanızı sağlayan yapı.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Stats Section -->
+        <section id="features" class="py-20 bg-slate-900 text-white px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-bold tracking-tight">Neden Sade Bir Tasarım?</h2>
+                        <p class="text-slate-400 leading-relaxed font-light">
+                            Gereksiz karmaşıklık ziyaretçilerinizi yorar. Minimalist tasarım yaklaşımıyla mesajınızı doğrudan iletir, dönüşüm oranlarınızı artırırız.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-slate-300 text-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                                Hızlı açılan sayfalar ve düşük hemen çıkma oranı
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300 text-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                                Mobil cihazlarda sorunsuz kullanıcı deneyimi
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300 text-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                                Temiz kod mimarisi ve kolay bakım
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 rounded-xl bg-slate-800/50 border border-slate-700/50 text-center">
+                            <p class="text-4xl font-bold text-white mb-1">%99</p>
+                            <p class="text-xs text-slate-400">Müşteri Memnuniyeti</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-800/50 border border-slate-700/50 text-center">
+                            <p class="text-4xl font-bold text-white mb-1">+150</p>
+                            <p class="text-xs text-slate-400">Tamamlanan Proje</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-800/50 border border-slate-700/50 text-center">
+                            <p class="text-4xl font-bold text-white mb-1">&lt;1s</p>
+                            <p class="text-xs text-slate-400">Ortalama Yüklenme</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-800/50 border border-slate-700/50 text-center">
+                            <p class="text-4xl font-bold text-white mb-1">7/24</p>
+                            <p class="text-xs text-slate-400">Teknik Destek</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-6 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">İletişim</h2>
+                    <p class="text-3xl font-bold tracking-tight text-slate-900">Bizimle İletişime Geçin</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-100 text-slate-800">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-semibold text-slate-900">E-posta</h5>
+                                <p class="text-xs text-slate-500 mt-0.5">info@sade.studio</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-100 text-slate-800">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-semibold text-slate-900">Telefon</h5>
+                                <p class="text-xs text-slate-500 mt-0.5">+90 (212) 000 00 00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-100 text-slate-800">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-semibold text-slate-900">Adres</h5>
+                                <p class="text-xs text-slate-500 mt-0.5">Levent, Büyükdere Cd. No:100<br>34394 Beşiktaş / İstanbul</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="pt-4 flex space-x-3">
+                            <a href="#" class="w-9 h-9 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-colors">
+                                <i data-lucide="twitter" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#" class="w-9 h-9 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-colors">
+                                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#" class="w-9 h-9 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-colors">
+                                <i data-lucide="instagram" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-2 bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                        <!-- Success Message Container -->
+                        <div id="form-alert" class="hidden mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+                            Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz!
+                        </div>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-700 mb-1">Adınız Soyadınız</label>
+                                    <input type="text" required placeholder="Ahmet Yılmaz" class="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-700 mb-1">E-posta Adresiniz</label>
+                                    <input type="email" required placeholder="ahmet@example.com" class="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-700 mb-1">Konu</label>
+                                <input type="text" required placeholder="Proje Talebi" class="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-700 mb-1">Mesajınız</label>
+                                <textarea rows="4" required placeholder="Projeniz hakkında kısa bilgi verin..." class="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all"></textarea>
+                            </div>
+                            <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-lg transition-all shadow-sm">
+                                Gönder
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 SADE.studio. Tüm hakları saklıdır.</p>
+            <a href="#hero" class="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors">
+                <span>Yukarı Çık</span>
+                <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Simple Form Handler Feedback
+        const contactForm = document.getElementById('contact-form');
+        const formAlert = document.getElementById('form-alert');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show feedback alert
+            formAlert.classList.remove('hidden');
+            
+            // Reset form
+            contactForm.reset();
+
+            // Hide alert after 5 seconds
+            setTimeout(() => {
+                formAlert.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
