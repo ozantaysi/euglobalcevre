@@ -48,7 +48,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 18px 8%;
+            padding: 12px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -59,19 +59,21 @@
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: #fff;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             letter-spacing: -0.5px;
         }
 
-        .logo i {
-            color: var(--primary);
-            font-size: 1.7rem;
+        .logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
         nav ul {
@@ -153,7 +155,7 @@
             background: linear-gradient(135deg, rgba(11, 19, 18, 0.92) 0%, rgba(11, 19, 18, 0.82) 100%);
         }
 
-        /* Unique Section Nature Backgrounds */
+        /* Section Backgrounds */
         #hero .bg-img {
             background-image: url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&w=1920');
         }
@@ -466,7 +468,7 @@
         }
 
         @media (max-width: 768px) {
-            header { padding: 15px 5%; }
+            header { padding: 12px 5%; }
             section { padding: 100px 5% 50px; }
             .hero-content h1 { font-size: 2.2rem; }
             .grid-2 { grid-template-columns: 1fr; gap: 20px; }
@@ -479,10 +481,11 @@
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Header with Custom Logo -->
     <header>
         <a href="#hero" class="logo">
-            <i class="fa-solid fa-recycle"></i> EU Global Çevre
+            <img src="https://www.euglobalcevre.com/wp-content/uploads/2020/09/logo-round.png" alt="EU Global Çevre Logo" class="logo-img">
+            EU Global Çevre
         </a>
         <nav>
             <ul>
@@ -556,7 +559,7 @@
         </div>
     </section>
 
-    <!-- Section 3: Services (8 Hizmet Kartı) -->
+    <!-- Section 3: Services -->
     <section id="services">
         <div class="bg-img"></div>
         <div class="bg-overlay"></div>
