@@ -53,26 +53,31 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(11, 19, 18, 0.9);
+            background: rgba(11, 19, 18, 0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
 
         .logo {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: #fff;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             letter-spacing: -0.5px;
         }
 
+        /* Büyütülmüş ve Arka Plana Uyumlu Transparan Logo Stili */
         .logo-img {
-            height: 45px;
-            width: auto;
+            height: 60px;
+            width: 60px;
             object-fit: contain;
+            border-radius: 50%;
+            background: transparent;
+            mix-blend-mode: lighten; /* Beyaz kısımları transparanlaştırır / koyu temaya entegre eder */
+            filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3));
             display: block;
         }
 
@@ -468,7 +473,7 @@
         }
 
         @media (max-width: 768px) {
-            header { padding: 12px 5%; }
+            header { padding: 10px 5%; }
             section { padding: 100px 5% 50px; }
             .hero-content h1 { font-size: 2.2rem; }
             .grid-2 { grid-template-columns: 1fr; gap: 20px; }
@@ -476,12 +481,13 @@
             .contact-info-grid { grid-template-columns: 1fr; }
             nav { display: none; }
             .stats-grid { grid-template-columns: 1fr; }
+            .logo-img { height: 48px; width: 48px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header with Custom Logo -->
+    <!-- Navigation Header -->
     <header>
         <a href="#hero" class="logo">
             <img src="https://www.euglobalcevre.com/wp-content/uploads/2020/09/logo-round.png" alt="EU Global Çevre Logo" class="logo-img">
@@ -559,7 +565,7 @@
         </div>
     </section>
 
-    <!-- Section 3: Services -->
+    <!-- Section 3: Services (8 Hizmet Kartı) -->
     <section id="services">
         <div class="bg-img"></div>
         <div class="bg-overlay"></div>
