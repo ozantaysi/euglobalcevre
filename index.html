@@ -20,7 +20,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-of
 header{position:fixed;top:0;left:0;width:100%;padding:10px 8%;display:flex;justify-content:space-between;align-items:center;z-index:1000;background:rgba(11,19,18,.55);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:background .3s,border-color .3s,padding .3s}
 header.scrolled{background:rgba(11,19,18,.94);border-color:var(--border);padding:6px 8%}
 .logo{font-size:1.35rem;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:12px;letter-spacing:-.5px}
-.logo-img{height:54px;width:54px;object-fit:contain;border-radius:50%;mix-blend-mode:lighten;filter:drop-shadow(0 0 8px rgba(16,185,129,.3))}
+.logo-img{height:54px;width:auto;max-width:150px;object-fit:contain;display:block}
 nav ul{display:flex;gap:28px;list-style:none;align-items:center}
 nav a{color:#cbd5e1;text-decoration:none;font-weight:600;font-size:.95rem;transition:color .3s;display:flex;align-items:center;gap:6px;padding:6px 0;position:relative}
 nav>ul>li>a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--primary);transition:width .3s}
@@ -118,7 +118,7 @@ nav a{padding:12px 4px}nav>ul>li>a::after{display:none}
 section{padding:100px 5% 90px}
 .grid-2,.contact-info-grid{grid-template-columns:1fr}.grid-2{gap:24px}
 .services-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr}
-.logo-img{height:44px;width:44px}.slide-caption{display:none}.contact-box{padding:28px 20px}
+.logo-img{height:44px}.slide-caption{display:none}.contact-box{padding:28px 20px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slide.active{animation:none}.slide{transition:none}.dot.active::after{animation:none;transform:none}}
 </style>
@@ -127,7 +127,7 @@ section{padding:100px 5% 90px}
 
 <header id="top">
   <a href="#hero" class="logo">
-    <img src="https://www.euglobalcevre.com/wp-content/uploads/2020/09/logo-round.png" alt="EU Global Logo" class="logo-img">
+    <img src="logo.png" alt="EU Global Logo" class="logo-img" onerror="this.style.display='none'">
     EU Global
   </a>
   <nav id="nav" aria-label="Ana menü">
