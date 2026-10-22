@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern & Canlı Tek Sayfa Site</title>
+    <title>EU Global Çevre | Geri Dönüşüm & Sürdürülebilir Çevre Çözümleri</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        :root {
+            --primary: #15803d;      /* Çevre Yeşili */
+            --primary-dark: #166534;
+            --primary-light: #dcfce7;
+            --secondary: #0f766e;    /* Turkuaz/Doğa Mavi */
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,9 +29,9 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            color: #333;
-            background-color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #334155;
+            background-color: var(--light);
             line-height: 1.6;
         }
 
@@ -32,207 +43,342 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 18px 8%;
         }
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: #2563eb;
+            font-weight: 800;
+            color: var(--primary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 35px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #4b5563;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #2563eb;
+            color: var(--primary);
         }
 
-        /* Hero Section with Background Image */
+        /* Hero Section (Geri Dönüşüm Görselli) */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75), rgba(22, 101, 52, 0.65)), 
+                        url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
-            padding: 0 20px;
+            color: var(--white);
+            padding: 120px 20px 60px;
+        }
+
+        .hero-badge {
+            background: rgba(220, 252, 231, 0.2);
+            border: 1px solid rgba(220, 252, 231, 0.4);
+            color: #86efac;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            backdrop-filter: blur(5px);
         }
 
         .hero h1 {
             font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            font-weight: 700;
+            max-width: 900px;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin-bottom: 35px;
             color: #e2e8f0;
         }
 
         .btn {
-            background-color: #2563eb;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 14px 36px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(21, 128, 61, 0.4);
         }
 
         .btn:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(21, 128, 61, 0.5);
         }
 
-        /* Sections General Styling */
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--white);
+            max-width: 1000px;
+            margin: -50px auto 0;
+            border-radius: 16px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Sections General */
         section {
-            padding: 100px 20px;
-            max-width: 1200px;
+            padding: 100px 8%;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #1e293b;
-            font-weight: 700;
+            margin-bottom: 60px;
         }
 
-        /* About / Content with Image Grid */
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            font-weight: 800;
+        }
+
+        /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
 
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
+            color: var(--dark);
             margin-bottom: 20px;
-            color: #1e293b;
+            line-height: 1.3;
         }
 
         .about-text p {
-            color: #64748b;
+            color: var(--gray);
             margin-bottom: 20px;
+            font-size: 1.05rem;
         }
 
-        .about-img img {
+        .about-features {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .about-features i {
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .about-img-box {
+            position: relative;
+        }
+
+        .about-img-box img {
             width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
         }
 
-        /* Services / Cards Section */
-        .services {
-            background-color: #ffffff;
+        /* Services Grid */
+        .services-bg {
+            background-color: #f1f5f9;
+            border-radius: 30px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .card {
-            background: #f8fafc;
-            border-radius: 12px;
+            background: var(--white);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
             border: 1px solid #e2e8f0;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px -5px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
-        .card img {
+        .card-img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
         }
 
         .card-content {
-            padding: 25px;
+            padding: 30px;
         }
 
         .card-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: #1e293b;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--dark);
         }
 
         .card-content p {
-            color: #64748b;
+            color: var(--gray);
             font-size: 0.95rem;
         }
 
-        /* Contact Section */
-        .contact {
+        /* Contact Box */
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+            border-radius: 24px;
+            padding: 60px 40px;
             text-align: center;
+            color: var(--white);
+            box-shadow: 0 20px 40px rgba(22, 101, 52, 0.2);
         }
 
-        .contact-box {
-            background: white;
+        .contact-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: #dcfce7;
             max-width: 600px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
         }
 
-        .contact-box p {
-            color: #64748b;
-            margin-bottom: 25px;
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary-dark);
+        }
+
+        .btn-white:hover {
+            background-color: #f1f5f9;
+            color: var(--primary-dark);
         }
 
         /* Footer */
         footer {
-            background: #0f172a;
+            background: var(--dark);
             color: #94a3b8;
             text-align: center;
-            padding: 30px 20px;
+            padding: 35px 20px;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-            }
-            nav ul {
-                display: none; /* Basit mobil gizleme, isterseniz hamburger menü eklenebilir */
-            }
+        @media (max-width: 900px) {
             .about-grid {
                 grid-template-columns: 1fr;
             }
             .hero h1 {
                 font-size: 2.5rem;
+            }
+            .stats-bar {
+                grid-template-columns: 1fr;
+                margin-top: 30px;
+            }
+            nav ul {
+                display: none;
             }
         }
     </style>
@@ -241,12 +387,14 @@
 
     <!-- Header & Navigation -->
     <header>
-        <a href="#anasayfa" class="logo"><i class="fa-solid fa-cube"></i> ProjeAdi</a>
+        <a href="#anasayfa" class="logo">
+            <i class="fa-solid fa-recycle"></i> EU Global Çevre
+        </a>
         <nav>
             <ul>
                 <li><a href="#anasayfa">Anasayfa</a></li>
                 <li><a href="#hakkimizda">Hakkımızda</a></li>
-                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#hizmetler">Geri Dönüşüm Hizmetleri</a></li>
                 <li><a href="#iletisim">İletişim</a></li>
             </ul>
         </nav>
@@ -254,68 +402,77 @@
 
     <!-- Hero Section -->
     <section id="anasayfa" class="hero">
-        <h1>Geleceği Bugünden Tasarlayın</h1>
-        <p>Modern, şık ve hızlı web çözümleri ile dijital dünyada fark yaratın.</p>
-        <a href="#hizmetler" class="btn">Keşfetmeye Başla</a>
+        <span class="hero-badge"><i class="fa-solid fa-leaf"></i> Sürdürülebilir Gelecek İçin</span>
+        <h1>Atıkları Kaynağa, Geleceği Yeşil Bir Dünyaya Dönüştürüyoruz</h1>
+        <p>EU Global Çevre olarak, endüstriyel ve evsel atıkların geri kazanımı ile doğayı koruyor, döngüsel ekonomiye güç katıyoruz.</p>
+        <a href="#hizmetler" class="btn">Çözümlerimizi İnceleyin <i class="fa-solid fa-arrow-right"></i></a>
     </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h3>%100</h3>
+            <p>Çevreye Duyarlı Süreç</p>
+        </div>
+        <div class="stat-item">
+            <h3>+10.000 Ton</h3>
+            <p>Yıllık Dönüştürülen Atık</p>
+        </div>
+        <div class="stat-item">
+            <h3>Sıfır Atık</h3>
+            <p>Hedefli Yönetim Sistemleri</p>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="hakkimizda">
-        <h2 class="section-title">Hakkımızda</h2>
         <div class="about-grid">
             <div class="about-text">
-                <h3>Yenilikçi ve Güvenilir Yaklaşım</h3>
-                <p>Alanında uzman ekibimizle, modern teknolojileri ve estetik tasarımları bir araya getirerek projelerinizi hayata geçiriyoruz. Kullanıcı deneyimini en üst seviyede tutmayı hedefliyoruz.</p>
-                <p>Siz de dijital dönüşümünüzü hızlandırmak ve modern bir görünüme kavuşmak istiyorsanız doğru yerdesiniz.</p>
-                <a href="#iletisim" class="btn">İletişime Geç</a>
+                <span class="section-subtitle">Hakkımızda</span>
+                <h3>Gelecek Nesillere Temiz Bir Çevre Bırakıyoruz</h3>
+                <p>EU Global Çevre, çevre mevzuatlarına tam uyum içerisinde atık yönetimi ve geri dönüşüm süreçlerini yürütmektedir. Plastik, kâğıt, cam ve tehlikesiz endüstriyel atıkların toplanması, ayrıştırılması ve hammadde olarak sanayiye kazandırılmasında uzman kadromuzla hizmet veriyoruz.</p>
+                
+                <ul class="about-features">
+                    <li><i class="fa-solid fa-check"></i> Lisanslı ve Çevre Bakanlığı Onaylı Tesisler</li>
+                    <li><i class="fa-solid fa-check"></i> Sıfır Atık Danışmanlığı ve Kurumsal Çözümler</li>
+                    <li><i class="fa-solid fa-check"></i> Karbon Ayak İzi Azaltım Stratejileri</li>
+                </ul>
             </div>
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Ekip Çalışması">
-            </div>
-        </div>
-    </section>
-
-    <!-- Services / Cards Section -->
-    <section id="hizmetler" class="services">
-        <h2 class="section-title">Hizmetlerimiz</h2>
-        <div class="services-grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Web Tasarım">
-                <div class="card-content">
-                    <h3>Web Tasarım</h3>
-                    <p>Markanızı en iyi yansıtan, tüm cihazlarla uyumlu (responsive) modern web siteleri tasarlıyoruz.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Dijital Strateji">
-                <div class="card-content">
-                    <h3>Dijital Çözümler</h3>
-                    <p>İş süreçlerinizi optimize eden, performans odaklı yazılımlar ve altyapı entegrasyonları kuruyoruz.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Danışmanlık">
-                <div class="card-content">
-                    <h3>Proje Danışmanlığı</h3>
-                    <p>Fikir aşamasından yayınlanmaya kadar tüm süreçlerde teknik rehberlik ve destek sağlıyoruz.</p>
-                </div>
+            <div class="about-img-box">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Yeşil Doğa ve Sürdürülebilirlik">
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="iletisim" class="contact">
-        <h2 class="section-title">Bize Ulaşın</h2>
-        <div class="contact-box">
-            <p>Projeleriniz hakkında konuşmak veya sorularınızı iletmek için her zaman bizimle iletişime geçebilirsiniz.</p>
-            <a href="mailto:ornek@email.com" class="btn"><i class="fa-solid fa-envelope"></i> E-posta Gönder</a>
-        </div>
-    </section>
+    <!-- Services Section -->
+    <div class="services-bg">
+        <section id="hizmetler">
+            <div class="section-header">
+                <span class="section-subtitle">Hizmetlerimiz</span>
+                <h2 class="section-title">Geri Dönüşüm & Atık Yönetimi</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">Endüstriyel</span>
+                        <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=600&q=80" alt="Plastik ve Ambalaj Geri Dönüşümü">
+                    </div>
+                    <div class="card-content">
+                        <h3>Ambalaj & Plastik Geri Dönüşümü</h3>
+                        <p>Kullanım dışı kalan plastik ve ambalaj atıklarını ayrıştırarak ikincil hammaddeye dönüştürüyor ve sanayiye yeniden kazandırıyoruz.</p>
+                    </div>
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 ProjeAdi. Tüm hakları saklıdır.</p>
-    </footer>
-
-</body>
-</html>
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">Kurumsal</span>
+                        <img src="https://images.unsplash.com/photo-1588619461336-654711f5e85c?auto=format&fit=crop&w=600&q=80" alt="Kağıt ve Karton Dönüşümü">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kâğıt & Karton Atık Yönetimi</h3>
+                        <p>Kurumsal tesis ve fabrikalardan çıkan kâğıt atıklarını toplayarak binlerce ağacın kesilmesini engelliyoruz.</p>
+                    </div>
+                </div>
