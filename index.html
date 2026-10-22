@@ -19,8 +19,8 @@
             --primary-dark: #059669;
             --accent: #3b82f6;
             --bg-dark: #0b1312;
-            --card-bg: rgba(255, 255, 255, 0.04);
-            --border: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(15, 25, 24, 0.75);
+            --border: rgba(255, 255, 255, 0.12);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -98,7 +98,7 @@
         }
 
         .header-phone {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(16, 185, 129, 0.15);
             border: 1px solid rgba(16, 185, 129, 0.3);
             color: var(--primary);
             padding: 8px 18px;
@@ -118,7 +118,7 @@
             box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
         }
 
-        /* Sections */
+        /* Sections with Nature Backgrounds */
         section {
             min-height: 100vh;
             width: 100%;
@@ -127,29 +127,52 @@
             align-items: center;
             justify-content: center;
             padding: 120px 8% 80px;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
         }
 
-        /* Section Gradient Backgrounds */
-        #hero {
-            background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.15) 0%, rgba(11, 19, 18, 1) 70%);
+        /* Background Image Overlays */
+        .bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-size: cover;
+            background-position: center;
         }
 
-        #about {
-            background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, rgba(11, 19, 18, 1) 70%);
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: linear-gradient(135deg, rgba(11, 19, 18, 0.92) 0%, rgba(11, 19, 18, 0.82) 100%);
         }
 
-        #services {
-            background: radial-gradient(circle at 80% 50%, rgba(16, 185, 129, 0.12) 0%, rgba(11, 19, 18, 1) 70%);
+        /* Unique Section Nature Backgrounds */
+        #hero .bg-img {
+            background-image: url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&w=1920');
         }
 
-        #contact {
-            background: radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.15) 0%, rgba(11, 19, 18, 1) 70%);
+        #about .bg-img {
+            background-image: url('https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&w=1920');
+        }
+
+        #services .bg-img {
+            background-image: url('https://images.pexels.com/photos/1549528/pexels-photo-1549528.jpeg?auto=compress&cs=tinysrgb&w=1920');
+        }
+
+        #contact .bg-img {
+            background-image: url('https://images.pexels.com/photos/3735218/pexels-photo-3735218.jpeg?auto=compress&cs=tinysrgb&w=1920');
         }
 
         .content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             max-width: 1200px;
             width: 100%;
         }
@@ -173,6 +196,7 @@
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 25px;
+            backdrop-filter: blur(5px);
         }
 
         .hero-content h1 {
@@ -227,6 +251,7 @@
             background: rgba(255, 255, 255, 0.05);
             color: #fff;
             border: 1px solid var(--border);
+            backdrop-filter: blur(5px);
         }
 
         .btn-outline:hover {
@@ -270,7 +295,7 @@
             border: 1px solid var(--border);
             padding: 35px;
             border-radius: 20px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         .stats-grid {
@@ -313,6 +338,7 @@
             border: 1px solid var(--border);
             padding: 25px 20px;
             border-radius: 18px;
+            backdrop-filter: blur(12px);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -324,7 +350,7 @@
         .service-card:hover {
             transform: translateY(-5px);
             border-color: rgba(16, 185, 129, 0.4);
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(15, 25, 24, 0.9);
         }
 
         .card-num {
@@ -340,7 +366,7 @@
         .service-icon {
             width: 48px;
             height: 48px;
-            background: rgba(16, 185, 129, 0.12);
+            background: rgba(16, 185, 129, 0.15);
             color: var(--primary);
             border-radius: 12px;
             display: flex;
@@ -369,6 +395,7 @@
             border: 1px solid var(--border);
             padding: 45px;
             border-radius: 24px;
+            backdrop-filter: blur(15px);
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
@@ -395,7 +422,7 @@
         }
 
         .contact-item:hover {
-            background: rgba(16, 185, 129, 0.08);
+            background: rgba(16, 185, 129, 0.1);
             border-color: rgba(16, 185, 129, 0.3);
         }
 
@@ -474,11 +501,13 @@
 
     <!-- Section 1: Hero -->
     <section id="hero">
+        <div class="bg-img"></div>
+        <div class="bg-overlay"></div>
         <div class="content hero-content">
             <div class="badge">
                 <i class="fa-solid fa-leaf"></i> Sürdürülebilir Çevre & Sanayi Çözümleri
             </div>
-            <h1>Atıkları Kaynağa, Geleceği Yeşil Bir Dünyaya Dönüştürüyoruz</h1>
+            <h1>Atığı Kaynağa, Dünyayı Hayata Döndür</h1>
             <p>Çevre danışmanlığı, entegre atık yönetimi, atık taşıma, kimyevi hammadde ikmali ve iş güvenliği süreçlerinde uçtan uca profesyonel hizmet sunuyoruz.</p>
             <div class="btn-group">
                 <a href="#services" class="btn btn-primary">Hizmetlerimizi İnceleyin <i class="fa-solid fa-arrow-right"></i></a>
@@ -489,18 +518,20 @@
 
     <!-- Section 2: About -->
     <section id="about">
+        <div class="bg-img"></div>
+        <div class="bg-overlay"></div>
         <div class="content">
             <div class="grid-2">
                 <div>
                     <div class="section-header" style="text-align: left;">
                         <span class="subtitle">Kurumsal Yaklaşımımız</span>
-                        <h2 class="title">Uzman ve Güvenilir Çevre Hizmetleri</h2>
+                        <h2 class="title">Temiz Bir Dünya, Ortak Sorumluluğumuz</h2>
                     </div>
                     <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; font-size: 0.95rem;">
-                        Firmamız, çevre ve atık yönetimi alanında uzman kadrosuyla <strong>çevre danışmanlığı</strong>, <strong>bildirim ve beyan</strong>, <strong>sosyal uygunluk danışmanlığı</strong> ile mevzuata uyumu kolaylaştırır.
+                        Firmamız, çevre ve atık yönetimi alanında uzman kadrosuyla <strong>çevre danışmanlığı</strong>, bildirim ve beyan süreçleri ile mevzuata uyumu kolaylaştırır. Sosyal uygunluk danışmanlığı ile etik standartlarınızı güçlendiriyoruz.
                     </p>
                     <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.95rem;">
-                        <strong>Atık yönetimi</strong>, <strong>kimyevi maddeler ikmali</strong>, <strong>endüstriyel oto temizlik ürünleri imalatı</strong> ve <strong>iş güvenliği</strong> hizmetlerimizle işletmenizin verimliliğini ve çevresel sorumluluklarını en üst seviyeye taşıyoruz.
+                        Deneyimli ekibimiz ve müşteri odaklı yaklaşımımızla çevresel sorumluluklarınızı yerine getirirken verimliliğinizi artırıyoruz.
                     </p>
                 </div>
                 <div class="about-box">
@@ -517,7 +548,7 @@
                         </div>
                         <div class="stat-card">
                             <h3>350+</h3>
-                            <p>Danışmanlık Hizmeti</p>
+                            <p>Danışmanlık</p>
                         </div>
                     </div>
                 </div>
@@ -527,6 +558,8 @@
 
     <!-- Section 3: Services (8 Hizmet Kartı) -->
     <section id="services">
+        <div class="bg-img"></div>
+        <div class="bg-overlay"></div>
         <div class="content">
             <div class="section-header">
                 <span class="subtitle">Faaliyet Alanlarımız</span>
@@ -539,7 +572,7 @@
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
                         <h3>Çevre Danışmanlığı</h3>
-                        <p>Çevre mevzuatına uygunluk, bildirim/beyan süreçleri ve sürdürülebilirlik danışmanlığı.</p>
+                        <p>Çevre mevzuatına uygun, verimli ve doğa dostu uygulamalar için profesyonel destek.</p>
                     </div>
                     <span class="card-num">01</span>
                 </div>
@@ -549,7 +582,7 @@
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-truck-moving"></i></div>
                         <h3>Atık Taşıma Hizmeti</h3>
-                        <p>Atıkların mevzuata uygun lisanslı araçlarla güvenli taşınması ve teslimi.</p>
+                        <p>Atıkların mevzuata uygun güvenli taşınması ve tesislerimize teslimi.</p>
                     </div>
                     <span class="card-num">02</span>
                 </div>
@@ -559,7 +592,7 @@
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
                         <h3>Atık Yönetimi</h3>
-                        <p>Atıkların toplanması, ayrıştırılması, geri dönüşümü ve bertarafı yönetimi.</p>
+                        <p>Atıkların toplanması, ayrıştırılması ve geri dönüşümü için sürdürülebilir çözümler.</p>
                     </div>
                     <span class="card-num">03</span>
                 </div>
@@ -569,7 +602,7 @@
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-flask"></i></div>
                         <h3>Kimyevi Maddeler</h3>
-                        <p>Hammadde alım satımı, motor yağları ve endüstriyel yağ bayiliği.</p>
+                        <p>Hammadde ve yardımcı hammaddeler alım satımı, motor yağları ve endüstriyel yağ bayiliği.</p>
                     </div>
                     <span class="card-num">04</span>
                 </div>
@@ -579,7 +612,7 @@
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
                         <h3>Temizlik Ürünleri</h3>
-                        <p>Oto bakım ürünleri ve endüstriyel temizlik kimyasalları imalatı.</p>
+                        <p>Oto bakım ürünleri ve yüksek kaliteli endüstriyel temizlik ürünleri imalatı.</p>
                     </div>
                     <span class="card-num">05</span>
                 </div>
@@ -589,7 +622,7 @@
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>Entegre Atık Yönetimi</h3>
-                        <p>Tüm atık süreçlerinin bütüncül planlanması ve yönetimi.</p>
+                        <p>Atık süreçlerinin bütüncül planlanması, yönetimi ve geri kazanımı.</p>
                     </div>
                     <span class="card-num">06</span>
                 </div>
@@ -599,7 +632,7 @@
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-smog"></i></div>
                         <h3>Karbon Ayak İzi</h3>
-                        <p>Emisyonların ölçümü, raporlanması ve azaltılması için sürdürülebilirlik çözümleri.</p>
+                        <p>Emisyonların ölçümü ve azaltılması için raporlama ve sürdürülebilirlik çözümleri.</p>
                     </div>
                     <span class="card-num">07</span>
                 </div>
@@ -609,7 +642,7 @@
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
                         <h3>İş Güvenliği Hizmeti</h3>
-                        <p>Yasalara uygun, güvenli çalışma ortamı sunmanız için tüm İSG süreçlerinde yanınızdayız.</p>
+                        <p>Yasalara uygun, güvenli çalışma ortamı sunmak için tüm İş Sağlığı ve Güvenliği süreçlerindeyiz.</p>
                     </div>
                     <span class="card-num">08</span>
                 </div>
@@ -619,12 +652,14 @@
 
     <!-- Section 4: Contact -->
     <section id="contact">
+        <div class="bg-img"></div>
+        <div class="bg-overlay"></div>
         <div class="content">
             <div class="contact-box">
                 <div class="badge"><i class="fa-solid fa-headset"></i> İletişime Geçin</div>
-                <h2 class="title" style="margin-bottom: 10px;">Sürdürülebilir Projenizi Birlikte Başlatalım</h2>
+                <h2 class="title" style="margin-bottom: 10px;">Atık Çözümlerimizle İlgili Uzmanlarımıza Danışın</h2>
                 <p style="color: var(--text-muted); font-size: 0.98rem;">
-                    Atık yönetimi, çevre danışmanlığı, iş güvenliği ve kimyevi madde tedariği süreçleri için bize dilediğiniz an ulaşabilirsiniz.
+                    Çevre danışmanlığı, atık yönetimi ve tüm kurumsal çözümlerimiz için bize dilediğiniz an ulaşabilirsiniz.
                 </p>
 
                 <!-- Contact Details -->
@@ -655,7 +690,7 @@
                 </div>
 
                 <div class="footer-note">
-                    &copy; 2026 EU Global Çevre A.Ş. Tüm hakları saklıdır.
+                    &copy; 2026 EU Global Çevre A.Ş. Tüm hakları saklıdır. Bornova - İzmir
                 </div>
             </div>
         </div>
