@@ -42,7 +42,7 @@
             line-height: 1.6;
         }
 
-        /* Fixed Navigation */
+        /* Fixed Navigation Header */
         header {
             position: fixed;
             top: 0;
@@ -69,7 +69,6 @@
             letter-spacing: -0.5px;
         }
 
-        /* Büyütülmüş ve Arka Plana Uyumlu Transparan Logo Stili */
         .logo-img {
             height: 60px;
             width: 60px;
@@ -102,6 +101,61 @@
 
         nav a:hover, nav a.active {
             color: var(--primary);
+        }
+
+        /* Hizmetler Dropdown Açılır Menü Stili */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            width: 310px;
+            background: rgba(11, 19, 18, 0.96);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 10px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li a {
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-menu li a:hover {
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--primary);
+            padding-left: 16px;
+        }
+
+        .dropdown-menu li a i {
+            color: var(--primary);
+            width: 18px;
+            text-align: center;
         }
 
         .header-phone {
@@ -138,7 +192,6 @@
             overflow: hidden;
         }
 
-        /* Background Image Overlays */
         .bg-img {
             position: absolute;
             top: 0;
@@ -160,7 +213,6 @@
             background: linear-gradient(135deg, rgba(11, 19, 18, 0.92) 0%, rgba(11, 19, 18, 0.82) 100%);
         }
 
-        /* Section Backgrounds */
         #hero .bg-img {
             background-image: url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&w=1920');
         }
@@ -266,7 +318,7 @@
             transform: translateY(-2px);
         }
 
-        /* Titles */
+        /* Section Titles */
         .section-header {
             margin-bottom: 40px;
             text-align: center;
@@ -497,7 +549,24 @@
             <ul>
                 <li><a href="#hero">Anasayfa</a></li>
                 <li><a href="#about">Hakkımızda</a></li>
-                <li><a href="#services">Hizmetlerimiz</a></li>
+                
+                <!-- Hizmetler Dropdown Menü -->
+                <li class="dropdown">
+                    <a href="#services">
+                        Hizmetlerimiz <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#cevre-danismanligi"><i class="fa-solid fa-chart-line"></i> Çevre Danışmanlığı</a></li>
+                        <li><a href="#atik-tasima"><i class="fa-solid fa-truck-moving"></i> Atık Taşıma Hizmeti</a></li>
+                        <li><a href="#atik-yonetimi"><i class="fa-solid fa-recycle"></i> Atık Yönetimi</a></li>
+                        <li><a href="#kimyevi-maddeler"><i class="fa-solid fa-flask"></i> Kimyevi Maddeler</a></li>
+                        <li><a href="#temizlik-urunleri"><i class="fa-solid fa-pump-soap"></i> Temizlik Ürünleri</a></li>
+                        <li><a href="#entegre-atik"><i class="fa-solid fa-diagram-project"></i> Entegre Atık Yönetimi</a></li>
+                        <li><a href="#karbon-ayak-izi"><i class="fa-solid fa-smog"></i> Karbon Ayak İzi</a></li>
+                        <li><a href="#is-guvenligi"><i class="fa-solid fa-user-shield"></i> İş Güvenliği Hizmeti</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#contact">İletişim</a></li>
             </ul>
         </nav>
@@ -565,7 +634,7 @@
         </div>
     </section>
 
-    <!-- Section 3: Services (8 Hizmet Kartı) -->
+    <!-- Section 3: Services (Resimlerdeki Birebir Açıklamalar) -->
     <section id="services">
         <div class="bg-img"></div>
         <div class="bg-overlay"></div>
@@ -577,59 +646,133 @@
             
             <div class="services-grid-8">
                 <!-- 01. Çevre Danışmanlığı -->
-                <div class="service-card">
+                <div class="service-card" id="cevre-danismanligi">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-                        <h3>Çevre Danışmanlığı</h3>
-                        <p>Çevre mevzuatına uygun, verimli ve doğa dostu uygulamalar için profesyonel destek.</p>
+                        <h3>ÇEVRE DANIŞMANLIĞI</h3>
+                        <p>Çevre mevzuatına uygunluk ve sürdürülebilirlik için danışmanlık.</p>
                     </div>
                     <span class="card-num">01</span>
                 </div>
 
                 <!-- 02. Atık Taşıma Hizmeti -->
-                <div class="service-card">
+                <div class="service-card" id="atik-tasima">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-truck-moving"></i></div>
-                        <h3>Atık Taşıma Hizmeti</h3>
-                        <p>Atıkların mevzuata uygun güvenli taşınması ve tesislerimize teslimi.</p>
+                        <h3>ATIK TAŞIMA HİZMETİ</h3>
+                        <p>Atıkların mevzuata uygun taşınması ve teslimi.</p>
                     </div>
                     <span class="card-num">02</span>
                 </div>
 
                 <!-- 03. Atık Yönetimi -->
-                <div class="service-card">
+                <div class="service-card" id="atik-yonetimi">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
-                        <h3>Atık Yönetimi</h3>
-                        <p>Atıkların toplanması, ayrıştırılması ve geri dönüşümü için sürdürülebilir çözümler.</p>
+                        <h3>ATIK YÖNETİMİ</h3>
+                        <p>Atıkların toplanması, ayrıştırılması, geri dönüşümü ve bertarafı yönetimi.</p>
                     </div>
                     <span class="card-num">03</span>
                 </div>
 
                 <!-- 04. Kimyevi Maddeler -->
-                <div class="service-card">
+                <div class="service-card" id="kimyevi-maddeler">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-flask"></i></div>
-                        <h3>Kimyevi Maddeler</h3>
+                        <h3>KİMYEVİ MADDELER</h3>
                         <p>Hammadde ve yardımcı hammaddeler alım satımı, motor yağları ve endüstriyel yağ bayiliği.</p>
                     </div>
                     <span class="card-num">04</span>
                 </div>
 
                 <!-- 05. Temizlik Ürünleri -->
-                <div class="service-card">
+                <div class="service-card" id="temizlik-urunleri">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
-                        <h3>Temizlik Ürünleri</h3>
-                        <p>Oto bakım ürünleri ve yüksek kaliteli endüstriyel temizlik ürünleri imalatı.</p>
+                        <h3>TEMİZLİK ÜRÜNLERİ</h3>
+                        <p>Oto bakım ürünleri ve endüstriyel temizlik ürünleri imalatı.</p>
                     </div>
                     <span class="card-num">05</span>
                 </div>
 
                 <!-- 06. Entegre Atık Yönetimi -->
-                <div class="service-card">
+                <div class="service-card" id="entegre-atik">
                     <div>
                         <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3>Entegre Atık Yönetimi</h3>
-                        <p>Atık süreçlerinin bütüncül planlanması, yönetimi ve geri kazanımı.</p>
+                        <h3>ENTEGRE ATIK YÖNETİMİ</h3>
+                        <p>Atık süreçlerinin bütüncül planlanması ve yönetimi.</p>
                     </div>
+                    <span class="card-num">06</span>
+                </div>
+
+                <!-- 07. Karbon Ayak İzi -->
+                <div class="service-card" id="karbon-ayak-izi">
+                    <div>
+                        <div class="service-icon"><i class="fa-solid fa-smog"></i></div>
+                        <h3>KARBON AYAK İZİ</h3>
+                        <p>Emisyonların ölçümü ve azaltılması için raporlama ve sürdürülebilirlik çözümleri.</p>
+                    </div>
+                    <span class="card-num">07</span>
+                </div>
+
+                <!-- 08. İş Güvenliği Hizmeti -->
+                <div class="service-card" id="is-guvenligi">
+                    <div>
+                        <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
+                        <h3>İŞ GÜVENLİĞİ HİZMETİ</h3>
+                        <p>İşletmenizin yasalara uygun, güvenli bir çalışma ortamı sunması için tüm İş Sağlığı ve Güvenliği süreçlerinde yanınızdayız.</p>
+                    </div>
+                    <span class="card-num">08</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Contact -->
+    <section id="contact">
+        <div class="bg-img"></div>
+        <div class="bg-overlay"></div>
+        <div class="content">
+            <div class="contact-box">
+                <div class="badge"><i class="fa-solid fa-headset"></i> İletişime Geçin</div>
+                <h2 class="title" style="margin-bottom: 10px;">Atık Çözümlerimizle İlgili Uzmanlarımıza Danışın</h2>
+                <p style="color: var(--text-muted); font-size: 0.98rem;">
+                    Çevre danışmanlığı, atık yönetimi ve tüm kurumsal çözümlerimiz için bize dilediğiniz an ulaşabilirsiniz.
+                </p>
+
+                <!-- Contact Details -->
+                <div class="contact-info-grid">
+                    <a href="tel:+905334356399" class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-text">
+                            <h4>Telefon İletişim</h4>
+                            <span>+90 533 435 63 99</span>
+                        </div>
+                    </a>
+                    <a href="mailto:info@euglobalcevre.com" class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h4>E-Posta Adresi</h4>
+                            <span>info@euglobalcevre.com</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="btn-group">
+                    <a href="https://wa.me/905334356399" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Destek Hattı
+                    </a>
+                    <a href="mailto:info@euglobalcevre.com" class="btn btn-outline">
+                        <i class="fa-solid fa-paper-plane"></i> Teklif İsteyin
+                    </a>
+                </div>
+
+                <div class="footer-note">
+                    &copy; 2026 EU Global A.Ş. Tüm hakları saklıdır. Bornova - İzmir
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
