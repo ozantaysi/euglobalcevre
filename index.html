@@ -118,6 +118,33 @@
             color: var(--primary);
         }
 
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-phone {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--primary);
+            padding: 8px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .header-phone:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+
         /* Dropdown Menu */
         .dropdown {
             position: relative;
@@ -268,6 +295,7 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -385,7 +413,7 @@
             padding: 25px 20px;
             border-radius: 20px;
             backdrop-filter: blur(12px);
-            transition: all 0.35 ease;
+            transition: all 0.35s ease;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -437,16 +465,76 @@
             line-height: 1.5;
         }
 
-        /* Contact Section */
+        /* Contact Section Details */
         .contact-box {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 60px;
+            padding: 50px;
             border-radius: 30px;
             backdrop-filter: blur(15px);
             text-align: center;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(16, 185, 129, 0.08);
+            border-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .contact-text span {
+            font-size: 1.05rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         /* Scroll Down Indicator */
@@ -479,6 +567,7 @@
             .hero-content h1 { font-size: 2.2rem; }
             .grid-2 { grid-template-columns: 1fr; gap: 20px; }
             .services-grid-8 { grid-template-columns: 1fr; }
+            .contact-info-grid { grid-template-columns: 1fr; }
             nav { display: none; }
             .side-dots { display: none; }
             .stats-grid { grid-template-columns: 1fr; }
@@ -487,7 +576,7 @@
 </head>
 <body>
 
-    <!-- Fixed Header Navigation with Dropdown Menu -->
+    <!-- Fixed Header Navigation with Dropdown Menu & Quick Phone -->
     <header>
         <a href="#hero" class="logo">
             <i class="fa-solid fa-recycle"></i> EU Global Çevre
@@ -506,239 +595,4 @@
                         <li><a href="#services"><i class="fa-solid fa-clipboard-check"></i> Çevre Danışmanlığı</a></li>
                         <li><a href="#services"><i class="fa-solid fa-truck-droplet"></i> Atık Taşıma Hizmeti</a></li>
                         <li><a href="#services"><i class="fa-solid fa-recycle"></i> Atık Yönetimi</a></li>
-                        <li><a href="#services"><i class="fa-solid fa-flask"></i> Kimyevi Maddeler</a></li>
-                        <li><a href="#services"><i class="fa-solid fa-pump-soap"></i> Temizlik Ürünleri</a></li>
-                        <li><a href="#services"><i class="fa-solid fa-diagram-project"></i> Entegre Atık Yönetimi</a></li>
-                        <li><a href="#services"><i class="fa-solid fa-smog"></i> Karbon Ayak İzi</a></li>
-                        <li><a href="#services"><i class="fa-solid fa-user-shield"></i> İş Güvenliği Hizmeti</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#contact">İletişim</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Side Pagination Dots -->
-    <div class="side-dots">
-        <div class="dot active" onclick="scrollToSection('hero')"></div>
-        <div class="dot" onclick="scrollToSection('about')"></div>
-        <div class="dot" onclick="scrollToSection('services')"></div>
-        <div class="dot" onclick="scrollToSection('contact')"></div>
-    </div>
-
-    <!-- Main Scroll Container -->
-    <div class="snap-container" id="main-container">
-
-        <!-- Section 1: Hero -->
-        <section id="hero">
-            <div class="bg-overlay hero-bg"></div>
-            <div class="content hero-content">
-                <div class="badge">
-                    <i class="fa-solid fa-leaf"></i> Sürdürülebilir Çevre & Sanayi Çözümleri
-                </div>
-                <h1>Atıkları Kaynağa, Geleceği Yeşil Bir Dünyaya Dönüştürüyoruz</h1>
-                <p>Çevre danışmanlığı, entegre atık yönetimi, atık taşıma, kimyevi hammadde ikmali ve iş güvenliği süreçlerinde uçtan uca profesyonel hizmet sunuyoruz.</p>
-                <div class="btn-group">
-                    <a href="#services" class="btn btn-primary">Hizmetlerimizi İnceleyin <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-outline">İletişim</a>
-                </div>
-            </div>
-            <a href="#about" class="scroll-down"><i class="fa-solid fa-chevron-down"></i></a>
-        </section>
-
-        <!-- Section 2: About -->
-        <section id="about">
-            <div class="bg-overlay about-bg"></div>
-            <div class="content">
-                <div class="grid-2">
-                    <div>
-                        <div class="section-header" style="text-align: left;">
-                            <span class="subtitle">Kurumsal Yaklaşımımız</span>
-                            <h2 class="title">Uzman ve Güvenilir Çevre Hizmetleri</h2>
-                        </div>
-                        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 15px;">
-                            Firmamız, çevre ve atık yönetimi alanında uzman kadrosuyla <strong>çevre danışmanlığı</strong>, <strong>bildirim ve beyan</strong>, <strong>sosyal uygunluk danışmanlığı</strong> ile mevzuata uyumu kolaylaştırır.
-                        </p>
-                        <p style="color: var(--text-muted); line-height: 1.7;">
-                            <strong>Atık yönetimi</strong>, <strong>kimyevi maddeler ikmali</strong>, <strong>endüstriyel oto temizlik ürünleri imalatı</strong> ve <strong>iş güvenliği</strong> hizmetlerimizle işletmenizin verimliliğini ve çevresel sorumluluklarını en üst seviyeye taşıyoruz.
-                        </p>
-                    </div>
-                    <div class="about-box">
-                        <h3 style="margin-bottom: 10px; font-size: 1.3rem;">Rakamlarla Başarılarımız</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Sektördeki tecrübemiz ve dinamik müşteri ağımız.</p>
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <h3>330+</h3>
-                                <p>Aktif Müşteri</p>
-                            </div>
-                            <div class="stat-card">
-                                <h3>850+</h3>
-                                <p>Bitirilen Proje</p>
-                            </div>
-                            <div class="stat-card">
-                                <h3>350+</h3>
-                                <p>Danışmanlık Hizmeti</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="#services" class="scroll-down"><i class="fa-solid fa-chevron-down"></i></a>
-        </section>
-
-        <!-- Section 3: Services (Tüm Alt Başlıklar) -->
-        <section id="services">
-            <div class="bg-overlay services-bg"></div>
-            <div class="content">
-                <div class="section-header">
-                    <span class="subtitle">Faaliyet Alanlarımız</span>
-                    <h2 class="title">Tüm Hizmet Konularımız</h2>
-                </div>
-                
-                <div class="services-grid-8">
-                    <!-- 01. Çevre Danışmanlığı -->
-                    <div class="service-card">
-                        <div>
-                            <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-                            <h3>Çevre Danışmanlığı</h3>
-                            <p>Çevre mevzuatına uygunluk, bildirim/beyan süreçleri ve sürdürülebilirlik için profesyonel danışmanlık.</p>
-                        </div>
-                        <span class="card-num">01</span>
-                    </div>
-
-                    <!-- 02. Atık Taşıma Hizmeti -->
-                    <div class="service-card">
-                        <div>
-                            <div class="service-icon"><i class="fa-solid fa-truck-moving"></i></div>
-                            <h3>Atık Taşıma Hizmeti</h3>
-                            <p>Atıkların mevzuata uygun lisanslı araçlarla güvenli bir şekilde taşınması ve tesis teslimi.</p>
-                        </div>
-                        <span class="card-num">02</span>
-                    </div>
-
-                    <!-- 03. Atık Yönetimi -->
-                    <div class="service-card">
-                        <div>
-                            <div class="service-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
-                            <h3>Atık Yönetimi</h3>
-                            <p>Atıkların kaynağında toplanması, ayrıştırılması, geri dönüşümü ve bertarafı yönetimi.</p>
-                        </div>
-                        <span class="card-num">03</span>
-                    </div>
-
-                    <!-- 04. Kimyevi Maddeler -->
-                    <div class="service-card">
-                        <div>
-                            <div class="service-icon"><i class="fa-solid fa-flask"></i></div>
-                            <h3>Kimyevi Maddeler</h3>
-                            <p>Hammadde ve yardımcı hammadde alım satımı, motor yağları ve endüstriyel yağ bayiliği.</p>
-                        </div>
-                        <span class="card-num">04</span>
-                    </div>
-
-                    <!-- 05. Temizlik Ürünleri -->
-                    <div class="service-card">
-                        <div>
-                            <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
-                            <h3>Temizlik Ürünleri</h3>
-                            <p>Oto bakım ürünleri ve yüksek kaliteli endüstriyel temizlik kimyasalları imalatı.</p>
-                        </div>
-                        <span class="card-num">05</span>
-                    </div>
-
-                    <!-- 06. Entegre Atık Yönetimi -->
-                    <div class="service-card">
-                        <div>
-                            <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-                            <h3>Entegre Atık Yönetimi</h3>
-                            <p>Tüm atık süreçlerinin uçtan uca bütüncül planlanması, geri kazanımı ve tesislere entegrasyonu.</p>
-                        </div>
-                        <span class="card-num">06</span>
-                    </div>
-
-                    <!-- 07. Karbon Ayak İzi -->
-                    <div class="service-card">
-                        <div>
-                            <div class="service-icon"><i class="fa-solid fa-smog"></i></div>
-                            <h3>Karbon Ayak İzi</h3>
-                            <p>Kurumsal emisyonların ölçümü, raporlanması ve azaltım hedefleri için sürdürülebilirlik çözümleri.</p>
-                        </div>
-                        <span class="card-num">07</span>
-                    </div>
-
-                    <!-- 08. İş Güvenliği Hizmeti -->
-                    <div class="service-card">
-                        <div>
-                            <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
-                            <h3>İş Güvenliği Hizmeti</h3>
-                            <p>İşletmenizin yasalara uygun, güvenli bir çalışma ortamı sunması için tüm İSG süreçlerinde yanınızdayız.</p>
-                        </div>
-                        <span class="card-num">08</span>
-                    </div>
-                </div>
-            </div>
-            <a href="#contact" class="scroll-down"><i class="fa-solid fa-chevron-down"></i></a>
-        </section>
-
-        <!-- Section 4: Contact -->
-        <section id="contact">
-            <div class="bg-overlay contact-bg"></div>
-            <div class="content">
-                <div class="contact-box">
-                    <div class="badge"><i class="fa-solid fa-envelope"></i> Bize Ulaşın</div>
-                    <h2 class="title" style="margin-bottom: 20px;">Sürdürülebilir Projenizi Birlikte Başlatalım</h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 35px;">
-                        Atık yönetimi, çevre danışmanlığı, iş güvenliği ve kimyevi madde tedariği konularındaki kurumsal teklif talepleriniz için anında iletişime geçin.
-                    </p>
-                    <div class="btn-group">
-                        <a href="mailto:info@euglobalcevre.com" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> E-Posta Gönder</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <script>
-        // Smooth scroll for dots and navigation
-        function scrollToSection(id) {
-            const section = document.getElementById(id);
-            if(section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Active state sync on scroll
-        const container = document.getElementById('main-container');
-        const sections = document.querySelectorAll('section');
-        const dots = document.querySelectorAll('.dot');
-        const navLinks = document.querySelectorAll('nav > ul > li > a');
-
-        container.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (container.scrollTop >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            dots.forEach((dot, index) => {
-                dot.classList.remove('active');
-                if (sections[index].getAttribute('id') === current) {
-                    dot.classList.add('active');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                        <li><a href="#
